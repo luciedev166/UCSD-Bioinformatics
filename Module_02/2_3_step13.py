@@ -1,8 +1,3 @@
-def main():
-    Genome = "AAAAGGGG"
-    symbol = "A"
-    print(FasterSymbolArray(Genome, symbol))
-    
 def FasterSymbolArray(Genome, symbol):
     array = {}
     n = len(Genome)
@@ -25,11 +20,10 @@ def FasterSymbolArray(Genome, symbol):
         
     return array
 
-def PatternCount(Pattern, Text):
-    count = 0 # output variable
-    for i in range(len(Pattern) // 2):
-        if Pattern[i] == Text:
-            count += 1
-    return count
-    
-main()
+def PatternCount(Text, Pattern):
+    return Text[:len(Text)//2].count(Pattern)
+
+### DO NOT MODIFY THE CODE BELOW THIS LINE ###
+import sys
+lines = sys.stdin.read().splitlines()
+print(FasterSymbolArray(lines[0],lines[1]))
