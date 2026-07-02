@@ -1,6 +1,6 @@
 def main():
-    p = "GGGCCGTTGGT"
-    q = "GGACCGTTGAC"
+    p = "CTTGAAGTGGACCTCTAGTTCCTCTACAAAGAACAGGTTGACCTGTCGCGAAG"
+    q = "ATGCCTTACCTAGATGCAATGACGGACGTATTCCTTTTGCCTCAACGGCTCCT"
 # Input:  Two strings p and q
 # Output: An integer value representing the Hamming Distance between p and q.
     print(HammingDistance(p, q))

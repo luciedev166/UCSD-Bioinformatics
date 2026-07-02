@@ -11,6 +11,8 @@ def SkewArray(Genome):
             skew.append(skew[-1])
     return skew
 
+main()
+
 
 
 

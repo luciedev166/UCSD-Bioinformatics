@@ -1,5 +1,5 @@
 def main():
-    genome = "TAAAGACTGCCGAGAGGCCAACACGAGTGCTAGAACGAGGGGCGTAAACGCGGGTCCGAT"
+    genome = "GATACACTTCCCGAGTAGGTACTG"
 
     print(MinimumSkew(genome))
 def MinimumSkew(Genome):
