@@ -24,7 +24,7 @@ def Consensus(motifs):
 
     counts = Count(motifs)
     
-    for i in range(len(motifs[0])):
+    for i in range(len(motifs[0])): #iterates over motif size
         column_counts = {
         'A': counts['A'][i],
         'C': counts['C'][i],
