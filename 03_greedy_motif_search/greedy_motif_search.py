@@ -18,17 +18,17 @@ def GreedyMotifSearch(dna, k, t):
     for row in dna:
         best_motifs.append(row[:k])
 
-    # try every k-mer from the FIRST dna string as a seed
+    # every k-mer from the FIRST dna string as a seed
     for i in range(len(dna[0]) - k + 1):
         motifs = [dna[0][i:i+k]]   # fresh attempt
 
-        # build this attempt using the remaining DNA strings
+        # every dna string from 1 to end, using profile(current_seed), iterate DNA string to get most probable, append to motifs
         for j in range(1, t):
-            profile = Profile(motifs)
+            profile = Profile(motifs) #grows by time
             next_motif = ProfileMostProbableKmer(dna[j], k, profile)
             motifs.append(next_motif)
 
-        # only compare once motifs is complete
+        # motif of current seed vs best_motifs
         if Score(motifs) < Score(best_motifs):
             best_motifs = motifs
 

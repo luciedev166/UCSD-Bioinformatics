@@ -1,10 +1,6 @@
 def main():
     motifs = [
-        "AACGTA",
-        "CCCGTT",
-        "CACCTT",
-        "GGATTA",
-        "TTCCGG"
+        "CAG"
     ]
     print(Profile(motifs))
 
