@@ -8,37 +8,38 @@ def main():
         "AATCCACCAGCTCCACGTGCAATGTTGGCCTA",
     ]
 
-    N = 10000
+    N = 100
     k = 8
     t = 5
     print(GibbsSampler(Dna, k, t, N))
 def GibbsSampler(Dna, k, t, N):
     BestMotifs = []
 
-    # fill with random set
-    for _ in range(t):
-        i = random.randint(0, (len(Dna[0]) - k))
-        BestMotifs.append(Dna[_][i: i + k])
-    
-    # print(BestMotifs)
-    #repeat replacements
+    # Fill with random starting motifs
+    for row in range(t):
+        i = random.randint(0, len(Dna[row]) - k)
+        BestMotifs.append(Dna[row][i:i + k])
+
+    Motifs = BestMotifs.copy()  # current working motifs
+
     for _ in range(N):
         i = random.randint(0, t - 1)
 
-        #profile of not i row
-        motifs = []
+        # Build profile without row i
+        motifs_without_i = []
         for row in range(t):
             if row != i:
-                motifs.append(BestMotifs[row])  
+                motifs_without_i.append(Motifs[row])
 
-        profile = Profile(motifs)
-        motifs.append(ProfileGeneratedString(Dna[i], profile, k))
+        profile = Profile(motifs_without_i)
 
-        # check if the replacement improves or not
-        if Score(motifs) < Score(BestMotifs):
-            BestMotifs[i] = motifs[-1]
+        # Always replace the current motif
+        Motifs[i] = ProfileGeneratedString(Dna[i], profile, k)
 
-       
+        # Only save it as the best if its score improved
+        if Score(Motifs) < Score(BestMotifs):
+            BestMotifs = Motifs.copy()
+
     return BestMotifs
 
 def ProfileGeneratedString(Text, profile, k):
