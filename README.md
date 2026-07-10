@@ -1,27 +1,55 @@
 # UCSD Bioinformatics Learning Repository
 
-This repository documents my progress through the UCSD Bioinformatics for Beginners course.
+This repository documents my completed coursework for UC San Diego's **Biology Meets Programming: Bioinformatics for Beginners** course.
 
-It contains Python implementations of foundational bioinformatics algorithms, especially those related to DNA replication, pattern matching, k-mer analysis, GC skew, origin of replication prediction, and greedy motif search.
+It contains Python implementations of foundational bioinformatics algorithms related to DNA replication, pattern matching, k-mer analysis, GC skew, origin of replication prediction, motif discovery, randomized motif search, and Gibbs sampling.
+
+## Course Status
+
+**Completed**
 
 ## Topics Covered
 
-- DNA replication and origin of replication
+### DNA Replication and Pattern Analysis
+
+- DNA replication and origins of replication
 - Pattern counting and pattern matching
 - Frequent k-mer detection
 - Reverse complements
-- Symbol arrays for circular genomes
-- GC skew analysis
+- Circular genome analysis
+- DnaA box identification
+
+### GC Skew and Origin Prediction
+
+- Symbol arrays
+- Optimized symbol arrays
+- GC skew arrays
 - Minimum skew positions
 - Hamming distance
 - Approximate pattern matching
+- Approximate pattern counting
+
+### Greedy Motif Search
+
 - Motif count matrices
 - Profile matrices
 - Consensus strings
 - Motif scoring
-- Profile-based k-mer probability
+- k-mer profile probability
 - Profile-most probable k-mers
 - Greedy motif search
+
+### Stochastic Motif Search
+
+- Pseudocounts
+- Profiles with pseudocounts
+- Greedy motif search with pseudocounts
+- Random motif generation
+- Randomized motif search
+- Probability normalization
+- Weighted random selection
+- Profile-generated strings
+- Gibbs sampling
 
 ## Repository Structure
 
@@ -47,10 +75,50 @@ It contains Python implementations of foundational bioinformatics algorithms, es
 └── optimized_symbol_array.py
 
 03_greedy_motif_search/
+├── greedy_motif_search.py
+├── greedy_motif_search_dosr.py
+├── kmer_profile_probability.py
+├── motif_consensus.py
 ├── motif_count_matrix.py
 ├── motif_profile_matrix.py
-├── motif_consensus.py
 ├── motif_score.py
-├── kmer_profile_probability.py
-├── profile_most_probable_kmer.py
-└── greedy_motif_search.py
+└── profile_most_probable_kmer.py
+
+04_stochastic_motif_search/
+├── count_with_pseudocounts.py
+├── profile_with_pseudocounts.py
+├── greedy_motif_search_with_pseudocounts.py
+├── greedy_motif_search_dosr_with_pseudocounts.py
+├── profile_most_probable_motifs.py
+├── random_motifs.py
+├── randomized_motif_search.py
+├── normalize_probabilities.py
+├── weighted_die.py
+├── profile_generated_string.py
+└── gibbs_sampler.py
+```
+
+## Key Learning Outcomes
+
+Through this course, I learned how biological questions can be translated into computational problems and solved using Python.
+
+I implemented deterministic and randomized algorithms for:
+
+- Locating candidate origins of replication
+- Comparing DNA sequences
+- Detecting approximate patterns
+- Constructing motif profiles
+- Evaluating motif quality
+- Searching for hidden regulatory motifs
+- Using probability-based sampling to escape greedy local solutions
+
+## Technologies Used
+
+- Python
+- Visual Studio Code
+- Git
+- GitHub
+
+## Notes
+
+The implementations in this repository were written as part of my learning process. Some files contain experimental code, comments, and intermediate approaches used to understand the algorithms step by step.
