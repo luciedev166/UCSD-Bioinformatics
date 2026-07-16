@@ -98,20 +98,6 @@ It contains Python implementations of foundational bioinformatics algorithms rel
 └── gibbs_sampler.py
 ```
 
-## Key Learning Outcomes
-
-Through this course, I learned how biological questions can be translated into computational problems and solved using Python.
-
-I implemented deterministic and randomized algorithms for:
-
-- Locating candidate origins of replication
-- Comparing DNA sequences
-- Detecting approximate patterns
-- Constructing motif profiles
-- Evaluating motif quality
-- Searching for hidden regulatory motifs
-- Using probability-based sampling to escape greedy local solutions
-
 ## Technologies Used
 
 - Python
